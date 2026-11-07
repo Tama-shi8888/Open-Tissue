@@ -9,7 +9,7 @@ import re, sys, pathlib
 OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "assets/subtitles")
 D = float(sys.argv[2]) if len(sys.argv) > 2 else 0.0   # length of inserted examples segment
 INSERT_AT = 57.8
-STEP = 3.183  # seconds between example images (3.583s each, 0.4s crossfade)
+STEP = 2.7  # seconds between example images (3.0s each, 0.3s transition)
 GOLD = r"\c&H4AB8E6&"
 
 # (start, end, text)
@@ -61,10 +61,10 @@ def shift(items):
 LINES, TAGS, CARDS = shift(LINES), shift(TAGS), shift(CARDS)
 
 EXAMPLES = [
-    "[[アウトドア]]の世界観を、1箱に。",
-    "ロボット型の[[おもしろ造形]]も。",
-    "ホテルの[[格]]を、触れるものに。",
-    "[[ロゴ]]を、ティッシュ1枚1枚に。",
+    ("[[アウトドア]]の世界観を、1箱に。", "OUTDOOR"),
+    ("ロボット型の[[おもしろ造形]]も。", "CHARACTER"),
+    ("ホテルの[[格]]を、触れるものに。", "HOTEL"),
+    ("[[ロゴ]]を、ティッシュ1枚1枚に。", "LOGO PRINT"),
 ]
 
 def ts(t):
@@ -87,12 +87,14 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Main,IPAGothic,50,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,1,0,1,6,4,2,40,40,64,1
+Style: Main,IPAGothic,54,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,1,0,1,6,4,2,40,40,64,1
 Style: Tag,IPAGothic,32,&H00101010,&H00101010,&H004AB8E6,&H00000000,1,0,0,0,100,100,3,0,3,9,0,7,48,40,42,1
 Style: Card,IPAGothic,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,4,0,1,6,4,8,40,40,90,1
 Style: CardEnd,IPAGothic,50,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,3,0,1,5,3,2,40,40,56,1
 
 Style: Note,IPAGothic,24,&H00F0F0F0,&H00F0F0F0,&H00000000,&H90000000,0,0,0,0,100,100,0,0,1,3,1,9,40,36,40,1
+
+Style: Num,IPAGothic,150,&H66FFFFFF,&H66FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,0,0,3,40,48,30,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -100,19 +102,26 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 ev = []
 POP = r"{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}"
+ACC = r"{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}"
+def accent(a, b):
+    return f"Dialogue: 0,{ts(a)},{ts(b)},Main,,0,0,0,,{ACC}"
 for s, e, t in LINES:
-    ev.append(f"Dialogue: 1,{ts(s)},{ts(e)},Main,,0,0,0,,{POP}{kw(t, 64)}")
+    ev.append(f"Dialogue: 1,{ts(s)},{ts(e)},Main,,0,0,0,,{POP}{kw(t, 68)}")
+    ev.append(accent(s, e))
 for s, e, t in TAGS:
     ev.append(f"Dialogue: 2,{ts(s)},{ts(e)},Tag,,0,0,0,,{{\\fad(200,200)\\move(20,52,48,52,0,260)}}{t} ")
 for s, e, t in CARDS:
     st = "Card" if s < 10 else "CardEnd"
-    ev.append(f"Dialogue: 3,{ts(s)},{ts(e)},{st},,0,0,0,,{{\\fad(300,400)\\fscx92\\fscy92\\t(0,{int((e-s)*1000)},\\fscx104\\fscy104)}}{kw(t, 72 if s < 10 else 62)}")
+    ev.append(f"Dialogue: 3,{ts(s)},{ts(e)},{st},,0,0,0,,{{\\fad(300,400)\\fsp44\\t(0,{int((e-s)*700)},\\fsp4)}}{kw(t, 72 if s < 10 else 62)}")
 
 if D:
-    for k, t in enumerate(EXAMPLES):
-        a = INSERT_AT + k * STEP + 0.25
-        ev.append(f"Dialogue: 1,{ts(a)},{ts(a + 3.0)},Main,,0,0,0,,{POP}{kw(t, 64)}")
-    ev.append(f"Dialogue: 2,{ts(INSERT_AT + 0.1)},{ts(INSERT_AT + D - 0.1)},Tag,,0,0,0,,{{\\fad(200,200)\\move(20,52,48,52,0,260)}}ORDER EXAMPLES ")
+    for k, (t, cat) in enumerate(EXAMPLES):
+        a = INSERT_AT + k * STEP + 0.12
+        ev.append(f"Dialogue: 1,{ts(a)},{ts(a + 2.5)},Main,,0,0,0,,{POP}{kw(t, 68)}")
+        ev.append(accent(a, a + 2.5))
+        tagend = a + 2.5 if k < 3 else INSERT_AT + D - 0.05
+        ev.append(f"Dialogue: 2,{ts(a - 0.1)},{ts(tagend)},Tag,,0,0,0,,{{\\fad(150,150)\\move(20,52,48,52,0,200)}}0{k+1} / 04  {cat} ")
+        ev.append(f"Dialogue: 0,{ts(a - 0.1)},{ts(tagend)},Num,,0,0,0,,{{\\fad(200,200)\\fscx110\\fscy110\\t(0,600,\\fscx100\\fscy100)}}0{k+1}")
     ev.append(f"Dialogue: 2,{ts(INSERT_AT + 0.1)},{ts(INSERT_AT + D - 0.1)},Note,,0,0,0,,※デザイン例(イメージ)です。掲載ブランドの導入実績を示すものではありません。")
 
 OUT.mkdir(parents=True, exist_ok=True)

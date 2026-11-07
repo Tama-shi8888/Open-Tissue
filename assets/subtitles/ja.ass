@@ -7,51 +7,88 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Main,IPAGothic,50,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,1,0,1,6,4,2,40,40,64,1
+Style: Main,IPAGothic,54,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,1,0,1,6,4,2,40,40,64,1
 Style: Tag,IPAGothic,32,&H00101010,&H00101010,&H004AB8E6,&H00000000,1,0,0,0,100,100,3,0,3,9,0,7,48,40,42,1
 Style: Card,IPAGothic,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,4,0,1,6,4,8,40,40,90,1
 Style: CardEnd,IPAGothic,50,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,3,0,1,5,3,2,40,40,56,1
 
 Style: Note,IPAGothic,24,&H00F0F0F0,&H00F0F0F0,&H00000000,&H90000000,0,0,0,0,100,100,0,0,1,3,1,9,40,36,40,1
 
+Style: Num,IPAGothic,150,&H66FFFFFF,&H66FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,0,0,3,40,48,30,1
+
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 1,0:00:01.56,0:00:02.18,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}ティッシュは、
-Dialogue: 1,0:00:02.86,0:00:03.95,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}会社の顔{\r}。
+Dialogue: 0,0:00:01.56,0:00:02.18,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:02.86,0:00:03.95,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}会社の顔{\r}。
+Dialogue: 0,0:00:02.86,0:00:03.95,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
 Dialogue: 1,0:00:04.57,0:00:06.49,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}オーダーメイドのティッシュを、ご提案します。
-Dialogue: 1,0:00:07.56,0:00:10.15,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}販促品は、使われないまま{\c&H4AB8E6&\fs64}捨てられ{\r}、
-Dialogue: 1,0:00:10.75,0:00:12.41,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}記憶にも残らない{\r}。
-Dialogue: 1,0:00:13.61,0:00:15.96,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}御社だけ{\r}のティッシュボックスを、
+Dialogue: 0,0:00:04.57,0:00:06.49,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:07.56,0:00:10.15,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}販促品は、使われないまま{\c&H4AB8E6&\fs68}捨てられ{\r}、
+Dialogue: 0,0:00:07.56,0:00:10.15,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:10.75,0:00:12.41,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}記憶にも残らない{\r}。
+Dialogue: 0,0:00:10.75,0:00:12.41,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:13.61,0:00:15.96,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}御社だけ{\r}のティッシュボックスを、
+Dialogue: 0,0:00:13.61,0:00:15.96,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
 Dialogue: 1,0:00:16.33,0:00:18.54,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}箱のデザインからつくります。
-Dialogue: 1,0:00:19.84,0:00:21.96,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}定番の{\c&H4AB8E6&\fs64}香り{\r}から、
+Dialogue: 0,0:00:16.33,0:00:18.54,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:19.84,0:00:21.96,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}定番の{\c&H4AB8E6&\fs68}香り{\r}から、
+Dialogue: 0,0:00:19.84,0:00:21.96,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
 Dialogue: 1,0:00:22.50,0:00:24.53,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}ブランドの香りの再現、
+Dialogue: 0,0:00:22.50,0:00:24.53,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
 Dialogue: 1,0:00:25.07,0:00:26.51,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}オリジナル香料まで。
-Dialogue: 1,0:00:27.67,0:00:29.58,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}柔らかさは{\c&H4AB8E6&\fs64}3グレード{\r}。
+Dialogue: 0,0:00:25.07,0:00:26.51,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:27.67,0:00:29.58,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}柔らかさは{\c&H4AB8E6&\fs68}3グレード{\r}。
+Dialogue: 0,0:00:27.67,0:00:29.58,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
 Dialogue: 1,0:00:30.06,0:00:33.52,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}用途と予算で選べます。
-Dialogue: 1,0:00:35.40,0:00:37.80,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}ロゴ{\r}やメッセージを、
-Dialogue: 1,0:00:37.80,0:00:40.40,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}1枚1枚{\r}に印刷。
-Dialogue: 1,0:00:42.28,0:00:44.30,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}ホテル{\r}の客室では、
+Dialogue: 0,0:00:30.06,0:00:33.52,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:35.40,0:00:37.80,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}ロゴ{\r}やメッセージを、
+Dialogue: 0,0:00:35.40,0:00:37.80,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:37.80,0:00:40.40,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}1枚1枚{\r}に印刷。
+Dialogue: 0,0:00:37.80,0:00:40.40,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:42.28,0:00:44.30,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}ホテル{\r}の客室では、
+Dialogue: 0,0:00:42.28,0:00:44.30,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
 Dialogue: 1,0:00:44.30,0:00:46.37,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}上質なアメニティに。
-Dialogue: 1,0:00:47.45,0:00:48.92,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}オフィスの{\c&H4AB8E6&\fs64}受付{\r}では、
-Dialogue: 1,0:00:49.33,0:00:51.45,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}お客様への{\c&H4AB8E6&\fs64}第一印象{\r}に。
-Dialogue: 1,0:00:52.92,0:00:54.40,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}ご家庭{\r}では、
+Dialogue: 0,0:00:44.30,0:00:46.37,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:47.45,0:00:48.92,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}オフィスの{\c&H4AB8E6&\fs68}受付{\r}では、
+Dialogue: 0,0:00:47.45,0:00:48.92,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:49.33,0:00:51.45,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}お客様への{\c&H4AB8E6&\fs68}第一印象{\r}に。
+Dialogue: 0,0:00:49.33,0:00:51.45,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:00:52.92,0:00:54.40,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}ご家庭{\r}では、
+Dialogue: 0,0:00:52.92,0:00:54.40,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
 Dialogue: 1,0:00:54.40,0:00:57.17,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}毎日手に取るブランドに。
-Dialogue: 1,0:01:11.48,0:01:12.74,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}1日に何度も、
-Dialogue: 1,0:01:13.22,0:01:15.00,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}ブランドと{\c&H4AB8E6&\fs64}触れ合う{\r}。
-Dialogue: 1,0:01:15.86,0:01:17.56,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}まずは{\c&H4AB8E6&\fs64}無料サンプル{\r}から。
-Dialogue: 1,0:01:17.93,0:01:19.68,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}お気軽にご相談ください。
+Dialogue: 0,0:00:54.40,0:00:57.17,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:01:09.44,0:01:10.69,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}1日に何度も、
+Dialogue: 0,0:01:09.44,0:01:10.69,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:01:11.18,0:01:12.96,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}ブランドと{\c&H4AB8E6&\fs68}触れ合う{\r}。
+Dialogue: 0,0:01:11.18,0:01:12.96,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:01:13.82,0:01:15.52,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}まずは{\c&H4AB8E6&\fs68}無料サンプル{\r}から。
+Dialogue: 0,0:01:13.82,0:01:15.52,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 1,0:01:15.89,0:01:17.64,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}お気軽にご相談ください。
+Dialogue: 0,0:01:15.89,0:01:17.64,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
 Dialogue: 2,0:00:07.20,0:00:12.60,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}課題 
 Dialogue: 2,0:00:13.30,0:00:18.70,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}01  BOX 
 Dialogue: 2,0:00:19.60,0:00:26.70,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}02  SCENT 
 Dialogue: 2,0:00:27.40,0:00:34.40,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}03  SOFTNESS 
 Dialogue: 2,0:00:35.10,0:00:40.60,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}04  LOGO 
 Dialogue: 2,0:00:42.00,0:00:57.30,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}SCENE 
-Dialogue: 2,0:01:11.17,0:01:19.77,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}FREE SAMPLE 
-Dialogue: 3,0:00:00.15,0:00:01.45,Card,,0,0,0,,{\fad(300,400)\fscx92\fscy92\t(0,1300,\fscx104\fscy104)}ティッシュが、{\c&H4AB8E6&\fs72}会社の顔{\r}になる。
-Dialogue: 3,0:01:20.77,0:01:27.07,CardEnd,,0,0,0,,{\fad(300,400)\fscx92\fscy92\t(0,6300,\fscx104\fscy104)}{\c&H4AB8E6&\fs62}無料サンプル{\r}受付中
-Dialogue: 1,0:00:58.05,0:01:01.05,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}アウトドア{\r}の世界観を、1箱に。
-Dialogue: 1,0:01:01.23,0:01:04.23,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}ロボット型の{\c&H4AB8E6&\fs64}おもしろ造形{\r}も。
-Dialogue: 1,0:01:04.42,0:01:07.42,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}ホテルの{\c&H4AB8E6&\fs64}格{\r}を、触れるものに。
-Dialogue: 1,0:01:07.60,0:01:10.60,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs64}ロゴ{\r}を、ティッシュ1枚1枚に。
-Dialogue: 2,0:00:57.90,0:01:10.87,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}ORDER EXAMPLES 
-Dialogue: 2,0:00:57.90,0:01:10.87,Note,,0,0,0,,※デザイン例(イメージ)です。掲載ブランドの導入実績を示すものではありません。
+Dialogue: 2,0:01:09.12,0:01:17.72,Tag,,0,0,0,,{\fad(200,200)\move(20,52,48,52,0,260)}FREE SAMPLE 
+Dialogue: 3,0:00:00.15,0:00:01.45,Card,,0,0,0,,{\fad(300,400)\fsp44\t(0,910,\fsp4)}ティッシュが、{\c&H4AB8E6&\fs72}会社の顔{\r}になる。
+Dialogue: 3,0:01:18.72,0:01:25.02,CardEnd,,0,0,0,,{\fad(300,400)\fsp44\t(0,4410,\fsp4)}{\c&H4AB8E6&\fs62}無料サンプル{\r}受付中
+Dialogue: 1,0:00:57.92,0:01:00.42,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}アウトドア{\r}の世界観を、1箱に。
+Dialogue: 0,0:00:57.92,0:01:00.42,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 2,0:00:57.82,0:01:00.42,Tag,,0,0,0,,{\fad(150,150)\move(20,52,48,52,0,200)}01 / 04  OUTDOOR 
+Dialogue: 0,0:00:57.82,0:01:00.42,Num,,0,0,0,,{\fad(200,200)\fscx110\fscy110\t(0,600,\fscx100\fscy100)}01
+Dialogue: 1,0:01:00.62,0:01:03.12,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}ロボット型の{\c&H4AB8E6&\fs68}おもしろ造形{\r}も。
+Dialogue: 0,0:01:00.62,0:01:03.12,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 2,0:01:00.52,0:01:03.12,Tag,,0,0,0,,{\fad(150,150)\move(20,52,48,52,0,200)}02 / 04  CHARACTER 
+Dialogue: 0,0:01:00.52,0:01:03.12,Num,,0,0,0,,{\fad(200,200)\fscx110\fscy110\t(0,600,\fscx100\fscy100)}02
+Dialogue: 1,0:01:03.32,0:01:05.82,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}ホテルの{\c&H4AB8E6&\fs68}格{\r}を、触れるものに。
+Dialogue: 0,0:01:03.32,0:01:05.82,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 2,0:01:03.22,0:01:05.82,Tag,,0,0,0,,{\fad(150,150)\move(20,52,48,52,0,200)}03 / 04  HOTEL 
+Dialogue: 0,0:01:03.22,0:01:05.82,Num,,0,0,0,,{\fad(200,200)\fscx110\fscy110\t(0,600,\fscx100\fscy100)}03
+Dialogue: 1,0:01:06.02,0:01:08.52,Main,,0,0,0,,{\fad(110,160)\fscx118\fscy118\t(0,170,\fscx100\fscy100)}{\c&H4AB8E6&\fs68}ロゴ{\r}を、ティッシュ1枚1枚に。
+Dialogue: 0,0:01:06.02,0:01:08.52,Main,,0,0,0,,{\an5\pos(640,574)\p1\bord0\shad0\1c&H4AB8E6&\fscx0\t(0,280,\fscx100)\fad(0,140)}m -46 0 l 46 0 46 3 -46 3{\p0}
+Dialogue: 2,0:01:05.92,0:01:08.88,Tag,,0,0,0,,{\fad(150,150)\move(20,52,48,52,0,200)}04 / 04  LOGO PRINT 
+Dialogue: 0,0:01:05.92,0:01:08.88,Num,,0,0,0,,{\fad(200,200)\fscx110\fscy110\t(0,600,\fscx100\fscy100)}04
+Dialogue: 2,0:00:57.90,0:01:08.82,Note,,0,0,0,,※デザイン例(イメージ)です。掲載ブランドの導入実績を示すものではありません。
