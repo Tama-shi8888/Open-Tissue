@@ -7,6 +7,9 @@ Timings come from silence detection of the narration; text is hand-written.
 import re, sys, pathlib
 
 OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "assets/subtitles")
+D = float(sys.argv[2]) if len(sys.argv) > 2 else 0.0   # length of inserted examples segment
+INSERT_AT = 57.8
+STEP = 3.183  # seconds between example images (3.583s each, 0.4s crossfade)
 GOLD = r"\c&H4AB8E6&"
 
 # (start, end, text)
@@ -52,6 +55,18 @@ CARDS = [
     (67.6, 73.9, "[[無料サンプル]]受付中"),
 ]
 
+def shift(items):
+    return [(a + D if a >= INSERT_AT else a, b + D if a >= INSERT_AT else b, *r) for a, b, *r in items]
+
+LINES, TAGS, CARDS = shift(LINES), shift(TAGS), shift(CARDS)
+
+EXAMPLES = [
+    "[[アウトドア]]の世界観を、1箱に。",
+    "ロボット型の[[おもしろ造形]]も。",
+    "ホテルの[[格]]を、触れるものに。",
+    "[[ロゴ]]を、ティッシュ1枚1枚に。",
+]
+
 def ts(t):
     cs = int(round(t * 100)); h, r = divmod(cs, 360000); m, r = divmod(r, 6000); s, c = divmod(r, 100)
     return f"{h}:{m:02d}:{s:02d}.{c:02d}"
@@ -77,6 +92,8 @@ Style: Tag,IPAGothic,32,&H00101010,&H00101010,&H004AB8E6,&H00000000,1,0,0,0,100,
 Style: Card,IPAGothic,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,4,0,1,6,4,8,40,40,90,1
 Style: CardEnd,IPAGothic,50,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB0000000,1,0,0,0,100,100,3,0,1,5,3,2,40,40,56,1
 
+Style: Note,IPAGothic,24,&H00F0F0F0,&H00F0F0F0,&H00000000,&H90000000,0,0,0,0,100,100,0,0,1,3,1,9,40,36,40,1
+
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
@@ -90,6 +107,13 @@ for s, e, t in TAGS:
 for s, e, t in CARDS:
     st = "Card" if s < 10 else "CardEnd"
     ev.append(f"Dialogue: 3,{ts(s)},{ts(e)},{st},,0,0,0,,{{\\fad(300,400)\\fscx92\\fscy92\\t(0,{int((e-s)*1000)},\\fscx104\\fscy104)}}{kw(t, 72 if s < 10 else 62)}")
+
+if D:
+    for k, t in enumerate(EXAMPLES):
+        a = INSERT_AT + k * STEP + 0.25
+        ev.append(f"Dialogue: 1,{ts(a)},{ts(a + 3.0)},Main,,0,0,0,,{POP}{kw(t, 64)}")
+    ev.append(f"Dialogue: 2,{ts(INSERT_AT + 0.1)},{ts(INSERT_AT + D - 0.1)},Tag,,0,0,0,,{{\\fad(200,200)\\move(20,52,48,52,0,260)}}ORDER EXAMPLES ")
+    ev.append(f"Dialogue: 2,{ts(INSERT_AT + 0.1)},{ts(INSERT_AT + D - 0.1)},Note,,0,0,0,,※デザイン例(イメージ)です。掲載ブランドの導入実績を示すものではありません。")
 
 OUT.mkdir(parents=True, exist_ok=True)
 (OUT / "ja.ass").write_text(header + "\n".join(ev) + "\n", encoding="utf-8")
