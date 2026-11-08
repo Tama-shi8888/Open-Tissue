@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": ["Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(ls:*)", "Read", "Glob", "Grep"],
+    "ask": ["Bash(git push:*)", "Bash(vercel:*)", "Bash(wrangler:*)", "WebFetch"],
+    "deny": ["Read(./.env)", "Read(./.env.*)", "Bash(rm -rf:*)", "Bash(curl * | sh:*)"]
+  },
+  "hooks": {
+    "SessionStart": [{"hooks": [{"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/01-session-start.sh"}]}],
+    "UserPromptSubmit": [{"hooks": [{"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/02-prompt-context.sh"}]}],
+    "PreToolUse": [
+      {"matcher": "Bash", "hooks": [
+        {"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/03-bash-guard.sh"},
+        {"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/05-publish-confirm.sh"}]},
+      {"matcher": "Write|Edit", "hooks": [{"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/04-secret-file-guard.sh"}]}
+    ],
+    "PostToolUse": [
+      {"matcher": "Write|Edit", "hooks": [
+        {"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/06-post-edit-format.sh"},
+        {"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/07-post-secret-scan.sh"},
+        {"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/08-post-edit-log.sh"}]}
+    ],
+    "PreCompact": [{"hooks": [{"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/09-pre-compact.sh"}]}],
+    "Stop": [{"hooks": [{"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/10-stop-notify.sh"}]}],
+    "SessionEnd": [{"hooks": [{"type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/11-session-end.sh"}]}]
+  }
+}
