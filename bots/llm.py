@@ -10,7 +10,7 @@ def _post(url, headers, payload):
 def claude(messages, system="", model=None):
     d = _post("https://api.anthropic.com/v1/messages",
         {"x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01"},
-        {"model": model or os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-5"), "max_tokens": 1024,
+        {"model": model or os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5"), "max_tokens": 1024,
          "system": system, "messages": messages})
     return d["content"][0]["text"]
 
