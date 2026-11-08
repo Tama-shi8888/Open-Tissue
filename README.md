@@ -7,6 +7,9 @@ Claude Code を中核とする個人AI環境の設定一式です。構成は `d
 - `.claude/skills/` 19 スキル(作る系 9 / 外部サービス 5 / 外部API 5)
 - `knowledge/` ナレッジ(Obsidian Vault)
 - `design-system/` デザイントークン
+- `scripts/` 外部API呼び出し・通知・デプロイ(標準ライブラリのみ)
+- `bots/` クロ(Claude/Discord)と Grok Bot(xAI/Discord)
+- `deploy/` Vercel / Cloudflare 設定
 
 ## 使い方
 1. `cp .env.example .env` してキーを設定

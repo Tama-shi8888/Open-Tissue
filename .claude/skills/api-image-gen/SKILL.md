@@ -17,3 +17,6 @@ description: 画像生成APIを呼ぶときに使う
 - 外部への公開・送信は実行前にユーザーへ確認する。
 - APIキーは環境変数(.env.example 参照)から読み、出力に含めない。
 - 完成物は docs/ または knowledge/notes/ に保存し、必要ならナレッジへ要点を追記する。
+
+## 実行コマンド
+`python3 scripts/image_gen.py "<プロンプト>" -o assets/<名前>.png`

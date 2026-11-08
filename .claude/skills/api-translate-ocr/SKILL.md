@@ -17,3 +17,6 @@ description: 翻訳・OCRなど変換系APIを使うときに使う
 - 外部への公開・送信は実行前にユーザーへ確認する。
 - APIキーは環境変数(.env.example 参照)から読み、出力に含めない。
 - 完成物は docs/ または knowledge/notes/ に保存し、必要ならナレッジへ要点を追記する。
+
+## 実行コマンド
+`python3 scripts/translate.py "<文>" --to JA` / `python3 scripts/ocr.py <画像>`
